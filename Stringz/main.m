@@ -14,9 +14,14 @@ int main(int argc, const char * argv[])
     @autoreleasepool {
         
         // insert code here...
-        NSLog(@"Hello, World!");
-        
-    }
+        NSMutableString *string = [[NSMutableString alloc] init];
+        for (int i = 0; i < 10; i++) {
+            [string appendString:@"Testing this loop\n"];
+        }
+        [string writeToFile:@"/tmp/loop.txt" atomically:YES encoding:NSUTF8StringEncoding error:NULL];
+        NSLog(@"Done writing /tmp/loop.txt");
+        }
     return 0;
 }
+
 
